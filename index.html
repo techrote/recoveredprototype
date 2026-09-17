@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Recovered Prototype // glitch instrument</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><h1>RECOVERED PROTOTYPE</h1><p>deterministic image corruption instrument // reconstruction 0.1</p></div>
+  <div class="top-actions">
+    <label class="file-button">OPEN IMAGE<input id="fileInput" type="file" accept="image/*"></label>
+    <button id="sampleButton">RESET SOURCE</button>
+    <button id="exportButton" class="accent">EXPORT PNG</button>
+  </div>
+</header>
+<main>
+  <section class="stage-panel">
+    <div class="stage-toolbar">
+      <button id="mutateButton" class="accent">MUTATE</button>
+      <button id="randomSeedButton">REROLL SEED</button>
+      <button id="previousButton">UNDO MUTATION</button>
+      <span id="status">ready</span>
+    </div>
+    <div class="canvas-wrap"><canvas id="canvas" width="960" height="640"></canvas></div>
+    <div class="transport">
+      <button id="playButton">PLAY</button><button id="stepButton">STEP</button><button id="resetTimeButton">FRAME 0</button>
+      <label>frame <input id="frame" type="range" min="0" max="240" value="0"><output id="frameOut">0</output></label>
+      <label>fps <input id="fps" type="range" min="1" max="30" value="12"><output id="fpsOut">12</output></label>
+    </div>
+  </section>
+  <aside class="controls">
+    <section class="identity"><h2>GENOME</h2>
+      <label>seed <input id="seed" type="text" value="RECOVERED-001"></label>
+      <div class="row"><button id="copyGenomeButton">COPY JSON</button><button id="pasteGenomeButton">PASTE JSON</button></div>
+    </section>
+    <div id="operatorControls"></div>
+  </aside>
+</main>
+<footer><span id="dimensions">960×640</span><span id="checksum">--------</span><span>artifact retained as recovery evidence</span></footer>
+<script src="core.js"></script><script src="app.js"></script>
+</body>
+</html>
